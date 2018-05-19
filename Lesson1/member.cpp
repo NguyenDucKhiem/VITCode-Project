@@ -115,7 +115,7 @@ void ShowInfoMember(InfoMember **member){
     //in ra màn hình
     for (int i = 0; i < nmember; i++)
     {
-        printf("Name: %d\tID: %s\t Age: %d\t Group_ID: %d\n", 
+        printf("Name: %s\tID: %d\t Age: %d\t Group_ID: %d\n", 
         member[i]->name ,member[i]->id, member[i]->age, member[i]->group_id );
     }
 }
