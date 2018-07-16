@@ -3,9 +3,18 @@
 
 #include "infor.h"
 
-int AddFromFile(InfoMember **members, int *nmember, char *file)
+
+/*
+    doc tu file
+
+    [IN] members: mang member
+    [IN] nmember: so luong phan tu mang members
+
+    return 1 neu hoan thanh, nho hon 0 ma loi xay ra
+*/
+int ReadFromFile(InfoMember **members, int *nmember)
 {
-    FILE *fp = fopen(file, "r");
+    FILE *fp = fopen("members.txt", "r");
 
     if (fp == NULL) {
         printf("Can't open file\n");
@@ -16,7 +25,7 @@ int AddFromFile(InfoMember **members, int *nmember, char *file)
 		int id = 0, age = 0, group_id = 0;
 		char name[256], getId[256];
 
-        if (fgets(name, 256, fp) == NULL){
+        if (fgets(name, 256, fp) == '\0'){
         	printf("Error: Loi ten\n");
         	return -2;
 		}
@@ -46,6 +55,31 @@ int AddFromFile(InfoMember **members, int *nmember, char *file)
 
     }
     printf("OK\n");
+    return 1;
 }
 
-#endif // FILE_H_INCLUDED
+/*
+    ghi ra file
+
+    [IN] members: mang member
+    [IN] nmember: so luong phan tu mang members
+
+    return void
+*/
+void WriteFile(InfoMember **members, int nmember){
+    FILE *file = fopen("members.txt", "a");
+
+    for(int i=0; i< nmember; i++){
+        if (!feof(file))
+            fprintf(file, "\n");
+        fputs(members[i]->name, file);
+        fprintf(file, "\n%d %d %d", members[i]->id, members[i]->age, members[i]->group_id);
+    }
+    fclose(file);
+    if(nmember==0) printf("Chua co thong tin nao de luu!\n");
+    else printf("Luu thong tin thanh cong!\n");
+}
+#endif // FILE_H_INCLUDE
+
+
+

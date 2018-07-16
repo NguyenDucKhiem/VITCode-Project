@@ -298,7 +298,8 @@ void menu(){
     printf("|[4].Xoa thanh vien                   |\n" );
     printf("|[5].Tim kiem thong tin thanh vien    |\n" );
     printf("|[6].Them thanh vien tu file          |\n" );
-    printf("|[7].Thoat chuong trinh               |\n" );
+    printf("|[7].Luu thong tin vao file           |\n" );
+    printf("|[8].Thoat chuong trinh               |\n");
     printf("|=====================================|\n");
 }
 
@@ -332,9 +333,13 @@ int main(){
                 SearchInfoMember(members, listSearchMember);
                 break;
             case 6:
-                char s[] = "members.txt";
-                AddFromFile(members, &nmember, s);
+                ReadFromFile(members, &nmember);
                 break;
+            case 7:
+                WriteFile(members, nmember);
+                break;
+            case 8:
+                return 0;
         }
         printf("Ban co muon tiep tuc khong? (Y/N):");
         fflush(stdin);
