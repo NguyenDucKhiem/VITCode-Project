@@ -2,7 +2,8 @@
 #define INFOR_H_INCLUDED
 
 #include <stdio.h>
-#include <conio.h>
+#include "conio.h"
+#include <curses.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -66,7 +67,7 @@ void InputInfoMember(InfoMember *member){
     scanf( "%d",&member->id );
     fflush(stdin);
     printf( "Name: " );
-    gets(member->name);
+    cgets(member->name);
     printf( "Age: " );
     fflush(stdin);
     scanf( "%d",&member->age );
