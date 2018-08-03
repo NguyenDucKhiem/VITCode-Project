@@ -3,7 +3,7 @@
 
 #include "infor.h"
 
-void swap(InforMember *a, InforMember *b)
+void swap(InfoMember *a, InfoMember *b)
 {
     InforMember temp = *a;
     *a = *b;
@@ -11,10 +11,10 @@ void swap(InforMember *a, InforMember *b)
 }
 
 
-int partition (InforMember **arr, int low, int high)
+int partition (InfoMember **arr, int low, int high)
 {
 	int pindex = low;			// cac phan tu trong doan 0->pindex-1 la  partion < pivot
-	InforMember *pivot = *(arr+high);		// arr[high] = (con tro chua dia chi thanh vien thu high)
+	InfoMember *pivot = *(arr+high);		// arr[high] = (con tro chua dia chi thanh vien thu high)
 	int i;
 
 	// Duyet mang arr : gap phan tu be hon pivot thi doi cho no voi arr[pindex], pindex cuoi cung se la vi tri cho pivot
@@ -36,7 +36,7 @@ int partition (InforMember **arr, int low, int high)
     a[][] is the array, p is starting index, that is 0, 
     and r is the last index of array.  
 */
-void quickSort(InforMember **a, int p, int r)    
+void quickSort(InfoMember **a, int p, int r)    
 {
     if(p < r)
     {
