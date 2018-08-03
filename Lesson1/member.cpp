@@ -11,6 +11,8 @@ void FreeInfoMember(InfoMember *member);
 void DeleteInfoMember(InfoMember **members);
 void SearchInfoMember(InfoMember **members, InfoMember **listSearchMember);
 int SearchMember(InfoMember **members, InfoMember **listSearchMember, char temp);
+void DeleteChar(InfoMember *member, int vitri);
+void Adjust(InfoMember *member);
 
 void menu(){
     printf("***************************************\n");
@@ -154,4 +156,9 @@ void SearchInfoMember(InfoMember **members, InfoMember **listSeachMember){
     else ShowInfoMember(listSeachMember,check);
 }
 
+<<<<<<< HEAD
 
+=======
+
+
+>>>>>>> vitcoder/master
